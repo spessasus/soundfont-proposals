@@ -33,4 +33,8 @@ Sfspec24 section 3.2:
 
 This allows us to add a new chunk without violating the spec.
 
-This solution does not violate the file format standard and is easy to implement.
+This seems to be the perfect solution because:
+1. Doesn't violate the SF2 spec (foreign INFO chunks shall be ignored)
+2. Default modulators, yay!
+3. Code from the IMOD and PMOD parsers can be reused.
+4. Should be easy to implement for most players.
