@@ -23,9 +23,9 @@ struct sfModList
 > Note: this assumes the reader is familiar with what sf2 specification defines as an "identical" modulator.
 
 - If a modulator is identical to the defined SF2 default modulator, it overrides the modulator in the default modulator list
-- If a modulator is identical to the defined SF2 default modulator and has the `transform` field set to 0, it removes it from the default modulator list.
+- If a modulator is identical to the defined SF2 default modulator and has the "transform amount" field set to 0, it removes it from the default modulator list.
 
-The default modulator list has to be estabilished at load time
+The default modulator list is altered at load time and then it acts exactly like the default SF2 modulator list, being overriden at the instrument level.
 
 ## Rationale
 Sfspec24 section 3.2:
