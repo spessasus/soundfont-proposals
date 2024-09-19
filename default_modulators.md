@@ -6,7 +6,9 @@ Originally created by me in https://github.com/davy7125/polyphone/issues/205.
 ## The Problem
 Currently, soundfont does not allow us to add default modulators. The only way to do so, is by adding them to _every instrument_ which is absolutely terrible.
 ## The Solution
-I propose to add a `DMOD` sub chunk within the INFO chunk. The formatting would be exactly the same as `PMOD` or `IMOD` modulator list, that is:
+I propose to add a `DMOD` sub chunk within the INFO list. 
+
+This chunk would be optional, have no length limit and the formatting would be exactly the same as `PMOD` or `IMOD` modulator list, that is:
 
 ```c
 struct sfModList
@@ -18,6 +20,8 @@ struct sfModList
   SFTransform sfModTransOper;
 };
 ```
+
+This chunk would preferably appear as the last chunk within the INFO list.
 
 ### Default modulator behavior
 > Note: this assumes the reader is familiar with what sf2 specification defines as an "identical" modulator.
