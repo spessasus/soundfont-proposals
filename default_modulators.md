@@ -27,9 +27,29 @@ This chunk would preferably appear as the last chunk within the INFO list.
 > Note: this assumes the reader is familiar with what sf2 specification defines as an "identical" modulator.
 
 - If a modulator is identical to the defined SF2 default modulator, it overrides the modulator in the default modulator list
-- If a modulator is identical to the defined SF2 default modulator and has the "transform amount" field set to 0, it removes it from the default modulator list.
 
 The default modulator list is altered at load time and then it acts exactly like the default SF2 modulator list.
+
+### Example behavior
+
+For example, assume a DMOD chunk of 2 modulators:
+
+- MIDI CC 1 to vibratoToPitch, linear unipolar positive, no controller, amount 100.
+- Poly Pressure to vibratoToPitch, linear unipolar positive, no controller, amount 50.
+
+The default modulators for this soundfont will be:
+
+- Velocity to attenuation (unchanged)
+- Velocity to filter (unchanged)
+- Channel pressure to vibratoLfoToPitch (unchanged)
+- Volume CC to attenuation (unchanged)
+- Expression CC to attenuation unchanged)
+- Pan CX to pan (unchanged)
+- Pitch wheel by pitch wheel range to initialPitch (unchanged)
+- reverb CC to reverbSend (unchanged)
+- chorus CC to chorusSend (unchanged)
+- Mod wheel to vibrato will change the amount from the default 50 cents to 100 cents, since the DMOD modulator is identical to it, overriding its amount.
+- A new modulator, poly pressure to vibrato, 50 cents depth.
 
 ## Rationale
 Sfspec24 section 3.2:
