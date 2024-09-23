@@ -53,6 +53,15 @@ The default modulators for this soundfont will be:
 - Mod wheel to vibrato will change the amount from the default 50 cents to 100 cents, since the DMOD modulator is identical to it, overriding its amount.
 - A new modulator, poly pressure to vibrato, 50 cents depth.
 
+## A test SoundFont
+There's a [test soundfont](DMOD%20Test%20SoundFont_v1.sf2) available for testing. It adds 4 default modulators:
+1. Disables the PitchWheel to initialPitch modulator
+2. Sets the pitch wheel to control 50 cents of vibLfoToPitch
+3. Disables the velocity to initialAttenuation generator
+4. Inverts the velocity to initialAttenuation generator
+
+Currently this chunk is supported and read by SpessaSynth. Its implementation complies with this proposal.
+
 ## Rationale
 Sfspec24 section 3.2:
 > The SoundFont 2 specification requires that implementations ignore unknown sub-chunks within the INFO-list chunk. 
