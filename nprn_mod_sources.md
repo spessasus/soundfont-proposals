@@ -4,8 +4,8 @@ This proposal allows NPRNs to be used with SF2 modulators.
 
 ## The Problem
 Currently, SF2 modulators only allow modulating Continuous Controllers.
-This can be limiting for soundfont creators looking to create, for example, G
-S-compatible soundfonts. For example, many MIDI files use NRPN messages for effects such as vibrato.
+This can be limiting for soundfont creators looking to create, for example, GS-compatible soundfonts.
+For example, many MIDI files use NRPN messages for effects such as vibrato.
 
 Another problem might be adding support for RPNs implemented after the SF2 standard was created, 
 such as modulation depth range.
