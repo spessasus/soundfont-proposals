@@ -35,7 +35,7 @@ Connection structure is as follows:
 - `controllerNumber` - `char` - the CC number to map a given parameter to. Ranges from 0 to 127.
 
 ## Example chunk
-- `DMOD` FourCC
+- `PNMM` FourCC
   - size: `8` meaning two connections defined.
     - `flags`: `0` - uses NRPN, only uses Data Entry MSB.
     - `parameterNumberMSB`: `1` - NRPN MSB must be equal to 1.
