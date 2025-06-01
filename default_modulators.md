@@ -31,6 +31,8 @@ The behavior is simple: The DMOD chunk replaces all the default modulators.
 
 The default modulator list is altered at load time, and then it acts exactly like the default SF2 modulator list.
 
+If there is no DMOD chunk, the default soundfont modulators shall be applied.
+
 ### Example behavior
 
 For example, assume a DMOD chunk of two modulators:
