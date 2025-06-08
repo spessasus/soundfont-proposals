@@ -1,11 +1,26 @@
 # Default Modulator Proposal
 This proposal adds support for default modulators in the SoundFont2 format.
 
-Originally created by me in https://github.com/davy7125/polyphone/issues/205.
+Originally created by me in https://github.com/davy7125/polyphone/issues/205. Updated on 08-06-2025.
+
+## Table Of Contents
+<!-- TOC -->
+* [Default Modulator Proposal](#default-modulator-proposal)
+  * [Table Of Contents](#table-of-contents)
+  * [The Problem](#the-problem)
+  * [The Solution](#the-solution)
+    * [Default modulator behavior](#default-modulator-behavior)
+    * [Example behavior](#example-behavior)
+    * [A test SoundFont](#a-test-soundfont)
+    * [Editing Default Modulators](#editing-default-modulators)
+  * [Rationale](#rationale)
+<!-- TOC -->
 
 ## The Problem
 Currently, soundfont does not allow us to add default modulators.
-The only way to do so is by adding them to _every instrument_ which is absolutely terrible.
+The only way to do so is
+by adding them to _every instrument,_ which can be a very tedious task
+and heavily discourages users from adding extended CC support to their banks.
 ## The Solution
 I propose to add a `DMOD` sub chunk within the INFO list. 
 
@@ -47,7 +62,7 @@ The default modulators for this soundfont will be:
 
 That's it!
 
-## A test SoundFont
+### A test SoundFont
 There's a [test soundfont](DMOD%20Test%20SoundFont_v2.sf2) available for testing. It has just one default modulator:
 - Invert the velocity to initialAttenuation generator
 
@@ -55,14 +70,30 @@ This disables all the other modulators, such as pitch wheel, pan or volume.
 
 Currently, this chunk is supported and read by SpessaSynth. Its implementation complies with this proposal.
 
+### Editing Default Modulators
+My yet to be finished [SpessaFont](https://github.com/spessasus/spessafont) sound bank editor allows reading,
+editing and writing default modulators.
+
+Note that the editor is still unfinished, but it does provide full editing support for the DMOD chunk for now.
+There is no on-screen keyboard, so testing with the SpessaSynth web app is recommended.
+
 ## Rationale
-Sfspec24 section 3.2:
-> The SoundFont 2 specification requires that implementations ignore unknown sub-chunks within the INFO-list chunk. 
+Sfspec24 section 10.2:
+
+> 10.2 Unknown Chunks
+>
+> In parsing the RIFF structure, unknown but well-formed chunks or sub-chunks may be encountered.
+> Unknown chunks within the INFO-list chunk should simply be ignored.
+> Other unknown chunks or sub-chunks are illegal and should be treated as structural errors.
 
 This allows us to add a new chunk without violating the spec.
 
 This seems to be the perfect solution because:
-1. Doesn't violate the SF2 spec (foreign INFO chunks shall be ignored)
+1. It does not violate the SF2 spec. (foreign INFO chunks shall be ignored)
 2. Default modulators, yay!
-3. Code from the IMOD and PMOD parsers can be reused.
-4. It should be easy to implement for most players.
+3. It will make modulators way easier to use, making users want to use the more often.
+4. Code from the IMOD and PMOD parsers can be reused.
+5. Inconsistently defined 2.01 and 2.04 modulators are resolved if the chunk is present.
+6. Simple implementation: replace the default modulator list if encountered.
+
+Created by spessasus
