@@ -39,8 +39,6 @@ struct sfModList
 
 Always multiple of ten bytes and the terminal modulator at the end.
 
-This chunk would preferably appear as the last chunk within the INFO list.
-
 ### Default modulator behavior
 The behavior is simple: The DMOD chunk replaces all the default modulators.
 
