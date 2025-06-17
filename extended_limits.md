@@ -102,6 +102,12 @@ The same as `pgen`, includes only the terminal generator record.
 
 ---
 
+## Reference Implementation
+
+[spessasynth_core](https://github.com/spessasus/spessasynth_core) and programs based on it (like SpessaSynth or SpessaFont) have support for both reading and writing xdta.
+
+---
+
 ## Rationale
 
 - Index limits are increased from 65,536 to **4,294,967,296** by combining the 16-bit `xdta` and `pdta` values into a 32-bit value. 
