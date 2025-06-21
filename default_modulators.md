@@ -37,13 +37,13 @@ struct sfModList
 };
 ```
 
-Always multiple of ten bytes and the terminal modulator at the end.
+Always multiple of ten bytes and the terminal zero modulator at the end.
 
 ### Default modulator behavior
 The behavior is simple: The DMOD chunk replaces all the default modulators.
 
 The default modulator list is replaced at load time, and then it acts exactly like the default SF2 modulator list.
-If the DMOD chunk is present but empty, the bank has no default modulators
+If the DMOD chunk is present but empty (i.e., only the terminal record), the bank has no default modulators.
 
 If there is no DMOD chunk, the default soundfont modulators shall be applied.
 
