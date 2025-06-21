@@ -104,7 +104,21 @@ The same as `pgen`, includes only the terminal generator record.
 
 ## Reference Implementation
 
-[spessasynth_core](https://github.com/spessasus/spessasynth_core) and programs based on it (like SpessaSynth or SpessaFont) have support for both reading and writing xdta.
+### Test SoundFont file
+A test soundfont file is available in this repository:
+- `GeneralUser-xdta.sf2`
+
+This is the GeneralUserGS 2.0.1 soundfont except:
+- All presets have been flattened for DLS: All generators and modulators are in the instrument zones, presets only contain a single instrument without any generators of their own.
+- All preset, instrument and sample names have been extended past the 20-character limit.
+
+This bank features the xdta chunk, allowing for more than 65k generators and longer names.
+
+### Software
+
+- [spessasynth_core](https://github.com/spessasus/spessasynth_core) and programs based on it have support for both reading and writing xdta.
+- [SpessaFont](https://github.com/spessasus/SpessaFont) can be used to see all the presets, instruments and samples with their long names:
+
 
 ---
 
