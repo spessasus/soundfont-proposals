@@ -51,6 +51,9 @@ If an application cannot display more than 40 characters, it may ignore the exte
 
 Each `xdta` chunk combines with its `pdta` counterpart to form a 32-bit value. The exact behavior for each chunk is described below.
 
+**Note:** the software is allowed to copy the values from `pdta` into the "unused, set to zero" entries if it simplifies the writing process.
+However, when reading the software is required to ignore the unused entries, be it zero or a copy of the `pdta` chunk value.
+
 ---
 
 ## `xdta` Chunk Descriptions
