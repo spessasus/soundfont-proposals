@@ -120,7 +120,7 @@ This bank features the xdta chunk, allowing for more than 65k generators and lon
 ### Software
 
 - [spessasynth_core](https://github.com/spessasus/spessasynth_core) and programs based on it have support for both reading and writing xdta.
-- [SpessaFont](https://github.com/spessasus/SpessaFont) can be used to see all the presets, instruments and samples with their long names.
+- [SpessaFont](https://spessasus.github.io/SpessaFont) can be used to see all the presets, instruments and samples with their long names.
 It can also be seen that this bank exceeds the regular SF2 generator limit, yet loads fine:
 
 ![image](https://github.com/user-attachments/assets/d07f3985-62ac-4465-97be-0d49699e54fe)

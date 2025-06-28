@@ -70,11 +70,8 @@ This disables all the other modulators, such as pitch wheel, pan or volume.
 Currently, this chunk is supported and read by SpessaSynth. Its implementation complies with this proposal.
 
 ### Editing Default Modulators
-My yet to be finished [SpessaFont](https://github.com/spessasus/spessafont) sound bank editor allows reading,
+My [SpessaFont](https://spessasus.github.io/SpessaFont) sound bank editor allows reading,
 editing and writing default modulators.
-
-Note that the editor is still unfinished, but it does provide full editing support for the DMOD chunk for now.
-There is no on-screen keyboard, so testing with the SpessaSynth web app is recommended.
 
 ## Rationale
 Sfspec24 section 10.2:
