@@ -254,7 +254,7 @@ The value is now 32-bit LE rather than 16-bit LE.
 
 The value is now 32-bit LE rather than 16-bit LE.
 
-### Preset Modulator Changes
+### Instrument Modulator Changes
 
 *Reasoning: More potential modulator sources (in the future).*
 
