@@ -161,6 +161,8 @@ Synths may reject compressed samples, which ensures that no additional dependenc
 Note: There's no Opus here despite the team considering it as while it's better than Vorbis, 
 it feels a bit redundant as FLAC exists for ultimate quality...
 
+Note 2: This doesn't use the revised containerization (i.e. single sample per `smpl` chunk) as it would probably require a major sample code rewrite.
+
 ## Preset data chunk
 
 ### Preset Header Changes
